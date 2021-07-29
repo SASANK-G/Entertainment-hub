@@ -10,7 +10,7 @@ import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
   root: {
-    width: 500,
+    width: '100vw',
     position:"fixed",
     bottom:0,
     backgroundColor:"#2d313a",
@@ -46,7 +46,6 @@ export default function SimpleBottomNavigation() {
       />
 
       <BottomNavigationAction 
-      style={{color:"white"}}
       style={{color:"white"}}
       label="Movies" 
       icon={<MovieIcon />} />
