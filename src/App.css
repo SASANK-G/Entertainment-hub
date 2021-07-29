@@ -6,8 +6,22 @@
   padding-bottom: 70px;
 }
 
-/* @media (max-width: 700px) {
-  .App {
-    padding-top: 70px;
-  }
+/* 
 } */
+
+.pageTitle {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 2vw;
+  padding: 10px 5px;
+
+  color: white;
+}
+
+@media (max-width: 700px) {
+  .pageTitle {
+    font-size: 6vw;
+  }
+}
