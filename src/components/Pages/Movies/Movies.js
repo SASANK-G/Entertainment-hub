@@ -1,12 +1,16 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import Genres from '../../Genres';
 import SingleContent from '../../SingleContent/SingleContent';
 import CustomPagination from '../Pagination/CustomPagination';
+
 
 export const Movies = () => {
   const [Page, setPage] = useState(1);
   const [content, setcontent] = useState([]);
   const [numOfPages, setnumOfPages] = useState();
+  const [selectedGenres, setselectedGenres] = useState([]);
+  const [genres, setGenres] = useState([]);
 
 
 
@@ -27,6 +31,10 @@ export const Movies = () => {
   return (
     <div>
       <span className="pageTitle">Movies</span>
+      <Genres
+        type="movie" selectedGenres={selectedGenres} genres={genres} setGenres={setGenres} setselectedGenres={setselectedGenres}
+        setPage={setPage}
+      />
       <div className="trending">
         {
           content && content.map((c)=>
