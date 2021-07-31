@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import useGenres from '../../../Hooks/useGenre';
 import Genres from '../../Genres';
 import SingleContent from '../../SingleContent/SingleContent';
 import CustomPagination from '../Pagination/CustomPagination';
@@ -11,28 +12,30 @@ export const Movies = () => {
   const [numOfPages, setnumOfPages] = useState();
   const [selectedGenres, setselectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
+  const genreforURL =useGenres(selectedGenres)
 
 
 
 
   const fetchMovies =async()=>{
-    const {data} = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate&page=${Page}`);
+    const {data} = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate&page=${Page}&with_genres=${genreforURL}`);
 
     setcontent(data.results);
     setnumOfPages(data.total_pages);
   };
 
   useEffect(() => {
+    window.scroll(0, 0);
    fetchMovies();
    //eslint-disable-next-line
-  }, [Page]);
+  }, [Page, genreforURL]);
 
 
   return (
     <div>
       <span className="pageTitle">Movies</span>
       <Genres
-        type="movie" selectedGenres={selectedGenres} genres={genres} setGenres={setGenres} setselectedGenres={setselectedGenres}
+        type="movie" selectedGenres={selectedGenres} genres={genres} setGenres={setGenres} setSelectedGenres={setselectedGenres}
         setPage={setPage}
       />
       <div className="trending">
