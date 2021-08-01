@@ -2,7 +2,7 @@ import { Badge } from '@material-ui/core';
 import React from 'react';
 import {img_300, unavailable} from "../../config/cofig";
 import './SingleContent.css'
-import '../ContentModel/ContentModel';
+import ContentModel from '../ContentModel/ContentModel';
 
 
 const SingleContent = ({
