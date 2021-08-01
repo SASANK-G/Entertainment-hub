@@ -1,12 +1,18 @@
 import { Button, createMuiTheme, Tab, Tabs, TextField, ThemeProvider } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
 
 
 
 const Search = () => {
   const [type, setType] = useState(0);
+  const [page, setPage] = useState(1);
+  const [searchText, setSearchText] = useState("");
+  const [content, setContent] = useState();
+  const [numOfPages, setNumOfPages]= useState();
+
 
   const darkTheme = createMuiTheme({
   palette:{
@@ -16,6 +22,28 @@ const Search = () => {
     },
   },
 });
+
+  const fetchSearch = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://api.themoviedb.org/3/search/${type ? "tv" : "movie"}?api_key=${
+          process.env.REACT_APP_API_KEY
+        }&language=en-US&query=${searchText}&page=${page}&include_adult=false`
+      );
+      setContent(data.results);
+      setNumOfPages(data.total_pages);
+      // console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    window.scroll(0, 0);
+    fetchSearch();
+    // eslint-disable-next-line
+  }, [type, page]);
+
 
 
 
@@ -29,13 +57,19 @@ const Search = () => {
       className="searchBox"
       label="Search"
       variant="filled"
-      // onChange={(e) => setSearchText(e.target.value)}
+      onChange={(e) => setSearchText(e.target.value)}
       />
       <Button variant="contained" style={{marginLeft : 10}}><SearchIcon/></Button>
 
       </div>
 
-      <Tabs value={type} indicatorColor="primary" textColor="primary">
+      <Tabs value={type} indicatorColor="primary" textColor="primary"
+        onChange={(event, newValue)=>{
+          setType(newValue);
+          setPage(1);
+        }}
+        style={{padding:5}}
+      >
         <Tab style={{width:"50%"}} label="Search Movies"/>
         <Tab style={{width:"50%"}} label="Search TV Series"/>
 
