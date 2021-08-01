@@ -2,6 +2,7 @@ import { Badge } from '@material-ui/core';
 import React from 'react';
 import {img_300, unavailable} from "../../config/cofig";
 import './SingleContent.css'
+import '../ContentModel/ContentModel';
 
 
 const SingleContent = ({
@@ -9,7 +10,7 @@ const SingleContent = ({
 }) => {
   
   return (
-    <div className="media">
+    <ContentModel media_type={media_type} id={id} >
         <Badge badgeContent={vote_average} color={vote_average>6 ? "primary" : "secondary"} />
 
       <img className="poster" src={poster ? `${img_300}/${poster}` : unavailable} alt={title} />
@@ -22,7 +23,7 @@ const SingleContent = ({
         {date}
       </span>
       </div>
-    </div>
+    </ContentModel>
   )
 }
 
