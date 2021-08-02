@@ -42,13 +42,13 @@ const SlickBar = styled.div`
   background-color: white;
   justify-content:space-between ;
   width:12rem;
-  left: ${(props) => (props.clicked ? "12rem" : "-9rem")};
+  left: ${(props) => (props.clicked ? "0rem" : "-9.5rem")};
   position:fixed;
   top:0;
   bottom:0;
   height:30vh;
   margin:auto;
-  
+  padding:0px 0px 0px .5rem;
   transition: all 0.5s ease;
   border-radius: 0 30px 30px 0;
 `;
@@ -62,10 +62,11 @@ background-color:red;
 `;
 
 const SecondPart = styled.div`
-width:4rem;
+
 background-color:blue;
 display:flex;
 justify-content:flex-end;
+align-items:center;
 
 
 `;
@@ -79,7 +80,7 @@ const Button = styled.button`
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  margin: 0.5rem 0 0 0.5rem;
+  
   cursor: pointer;
   
   
