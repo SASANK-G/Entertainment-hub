@@ -42,7 +42,7 @@ const SlickBar = styled.div`
   background-color: white;
   justify-content:space-between ;
   width:12rem;
-  left: ${(props) => (props.clicked ? "0rem" : "-9.5rem")};
+  left: ${(props) => (props.clicked ? "0rem" : "-10rem")};
   position:fixed;
   top:0;
   bottom:0;
@@ -55,8 +55,11 @@ const SlickBar = styled.div`
 {/*width: ${(props) => (props.clicked ? "12rem" : "3.5rem")};*/}
 
 const FirstPart = styled.div`
-width:4rem;
+width:100%;
 background-color:red;
+display:flex;
+flex-direction:flex-end;
+justify-content:end;
 
 
 `;
@@ -80,7 +83,7 @@ const Button = styled.button`
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  
+  position:relative;
   cursor: pointer;
   
   
@@ -88,6 +91,32 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+
+   &::before,
+  &::after {
+    content: "";
+    background-color: white;
+    height: 2px;
+    width: 1rem;
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+
+  &::before {
+    top: ${(props) => (props.clicked ? "1.5" : "1rem")};
+    transform: ${(props) => (props.clicked ? "rotate(135deg)" : "rotate(0)")};
+    
+  }
+
+  &::after {
+    top: ${(props) => (props.clicked ? "1.2" : "1.5rem")};
+    transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
+  }
+
+
+
+
+
   `;
 
 
@@ -109,7 +138,19 @@ function App() {
       <SidebarContainer>
         <SlickBar clicked={click}>
           <FirstPart>
-                hi
+            <Profile >
+                <img
+                  
+                  src=""
+                  alt="Profile"
+                />
+                <Details >
+                  <Name>
+                    <h4>Sasank&nbsp;G</h4>
+                    <a href="https://github.com/SASANK-G">View&nbsp;Profile</a>
+                  </Name>
+                </Details>
+            </Profile>
           </FirstPart>
             <SecondPart>
               <Button clicked={click} onClick={() => handleClick()}>
