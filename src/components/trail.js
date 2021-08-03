@@ -5,29 +5,29 @@ import styled from 'styled-components';
 
 
 
-const SidebarContainer = styled.div`
-  background-color: #39845a;
-  width: 2rem;
-  height: 20vh;
-  top:0;
+// const SidebarContainer = styled.div`
+//   background-color: #39845a;
+//   width: 2rem;
+//   height: 20vh;
+//   top:0;
   
-  right:0;
-  bottom:0;
-  border-radius: 0 30px 30px 0;
+//   right:0;
+//   bottom:0;
+//   border-radius: 0 30px 30px 0;
   
-  position: fixed;
-  display: flex;
+//   position: fixed;
+//   display: flex;
   
-  align-items: center;
-  justify-content: center;
-  margin:auto;
+//   align-items: center;
+//   justify-content: center;
+//   margin:auto;
 
   
-`;
+// `;
 
 
 const SlickBar = styled.div`
-  color:  green;
+  color:  White;
   display: flex;
   align-items: center;
   background-color: #262e3d;
@@ -74,15 +74,13 @@ const Profile = styled.div`
   transition: all 0.3s ease;
 
   img {
-    width: 4rem;
-    height: 4rem;
+    width: 4.5rem;
+    height: 5rem;
     border-radius: 50%;
     cursor: pointer;
-
-    &:hover {
-      border: 2px solid grey;
-      padding: 2px;
-    }
+    border: 3px solid grey;
+     
+    
   }
 `;
 
@@ -101,14 +99,11 @@ const Name = styled.div`
   justify-content: center;
   align-items: center;
 
-  h4 {
-    display: inline-block;
-  }
-
+  
   a {
     font-size: 0.8rem;
     text-decoration: none;
-    color: grey;
+    color: gray;
 
     &:hover {
       text-decoration: underline;
@@ -183,7 +178,7 @@ const [click, setClick] = useState(false);
   }
 
   return (
-      <SidebarContainer>
+      
         <SlickBar clicked={click}>
           <FirstPart>
             <Profile >
@@ -194,7 +189,8 @@ const [click, setClick] = useState(false);
                 />
                 <Details >
                   <Name>
-                    <h4>Sasank&nbsp;G</h4>
+                    Developed By<br></br>
+                     &nbsp;&nbsp;&nbsp; Sasank&nbsp;G
                     <a href="https://github.com/SASANK-G">View&nbsp;Profile</a>
                   </Name>
                 </Details>
@@ -205,7 +201,7 @@ const [click, setClick] = useState(false);
             </Button>
             </SecondPart>
         </SlickBar>
-      </SidebarContainer>
+
     
   );
 }
