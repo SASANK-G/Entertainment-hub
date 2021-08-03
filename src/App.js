@@ -10,6 +10,7 @@ import Search from './components/Pages/Search/Search';
 import Series from './components/Pages/series/Series';
 import styled from 'styled-components';
 import { useState } from 'react';
+import a1 from '../src/Images/a1.jpg';
 
 
 
@@ -39,7 +40,7 @@ const SlickBar = styled.div`
   color:  green;
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: #262e3d;
   justify-content:space-between ;
   width:12rem;
   left: ${(props) => (props.clicked ? "0rem" : "-10rem")};
@@ -56,13 +57,77 @@ const SlickBar = styled.div`
 
 const FirstPart = styled.div`
 width:100%;
-background-color:red;
+
 display:flex;
 flex-direction:flex-end;
 justify-content:end;
 
 
 `;
+
+const Profile = styled.div`
+  
+  
+
+  padding: 0.5rem 1rem;
+  /* border: 2px solid var(--white); */
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
+
+ 
+  
+
+  transition: all 0.3s ease;
+
+  img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      border: 2px solid grey;
+      padding: 2px;
+    }
+  }
+`;
+
+const Details = styled.div`
+  display: flex;
+  justify-content: space-between;
+  
+  align-items: center;
+`;
+
+const Name = styled.div`
+  
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h4 {
+    display: inline-block;
+  }
+
+  a {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: grey;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+
+
 
 const SecondPart = styled.div`
 
@@ -113,12 +178,7 @@ const Button = styled.button`
     transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
   }
 
-
-
-
-
   `;
-
 
 
 
@@ -141,7 +201,7 @@ function App() {
             <Profile >
                 <img
                   
-                  src=""
+                  src={a1}
                   alt="Profile"
                 />
                 <Details >
