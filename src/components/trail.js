@@ -42,7 +42,10 @@ const SlickBar = styled.div`
   padding:0px 0px 0px .5rem;
   transition: all 0.5s ease;
   border-radius: 0 30px 30px 0;
-   box-shadow: 0px 0px 8px black;
+  box-shadow: 0px 0px 8px black;
+  @media (max-width: 700px) {
+    height: 20vh;
+  }
 `;
 
 const FirstPart = styled.div`
@@ -79,6 +82,8 @@ const Profile = styled.div`
     }
     
   }
+  
+}
 `;
 
 const Details = styled.div`
