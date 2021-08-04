@@ -42,6 +42,7 @@ const SlickBar = styled.div`
   padding:0px 0px 0px .5rem;
   transition: all 0.5s ease;
   border-radius: 0 30px 30px 0;
+   box-shadow: 0px 0px 8px black;
 `;
 {/*width: ${(props) => (props.clicked ? "12rem" : "3.5rem")};*/}
 
@@ -62,15 +63,10 @@ const Profile = styled.div`
   padding: 0.5rem 1rem;
   /* border: 2px solid var(--white); */
   border-radius: 20px;
-
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction:column;
-
- 
-  
-
   transition: all 0.3s ease;
 
   img {
@@ -104,9 +100,11 @@ const Name = styled.div`
     font-size: 0.8rem;
     text-decoration: none;
     color: gray;
+    margin:0.5rem 0;
 
     &:hover {
       text-decoration: underline;
+    
     }
   }
 `;
@@ -116,11 +114,9 @@ const Name = styled.div`
 
 const SecondPart = styled.div`
 
-background-color:blue;
-display:flex;
-justify-content:flex-end;
-align-items:center;
-
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
 
 `;
 
@@ -191,7 +187,7 @@ const [click, setClick] = useState(false);
                   <Name>
                     Developed By<br></br>
                      &nbsp;&nbsp;&nbsp; Sasank&nbsp;G
-                    <a href="https://github.com/SASANK-G">View&nbsp;Profile</a>
+                    <a href="https://github.com/SASANK-G" target="_blank">View&nbsp;Profile</a>
                   </Name>
                 </Details>
             </Profile>
