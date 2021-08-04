@@ -1,5 +1,5 @@
 @font-face {
-  src: url(../fonts/TheHistoriaDemo.ttf);
+  src: url(../fonts/Gloss_And_Bloom.ttf);
   font-family: Historia;
 
 }
@@ -15,10 +15,16 @@
   text-transform: uppercase;
   background-color: #39445a;
   font-family: Historia;
-  font-size: 3vw;
+  font-size: 2.2vw;
   height: 60px;
   /* padding: 15px 1px; */
   box-shadow: 0px 1px 5px black;
   color: white;
 
+}
+
+@media (max-width: 780px) {
+  .header {
+    font-size: 6vw;
+  }
 }
