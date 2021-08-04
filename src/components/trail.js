@@ -44,7 +44,6 @@ const SlickBar = styled.div`
   border-radius: 0 30px 30px 0;
    box-shadow: 0px 0px 8px black;
 `;
-{/*width: ${(props) => (props.clicked ? "12rem" : "3.5rem")};*/}
 
 const FirstPart = styled.div`
 width:100%;
@@ -190,7 +189,7 @@ const [click, setClick] = useState(false);
                   <Name>
                     Developed By<br></br>
                      &nbsp;&nbsp;&nbsp; Sasank&nbsp;G
-                    <a href="https://github.com/SASANK-G" target="_blank">View&nbsp;Profile</a>
+                    <a href="https://github.com/SASANK-G" target="_blank" rel="noopener noreferrer">View&nbsp;Profile</a>
                   </Name>
                 </Details>
             </Profile>

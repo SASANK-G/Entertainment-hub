@@ -2,15 +2,12 @@
 import { Container } from '@material-ui/core';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import SimpleBottomNavigation from './components/MainNav';
 import Trending from './components/Pages/Trending/Trending';
 import Movies from './components/Pages/Movies/Movies';
 import Search from './components/Pages/Search/Search';
 import Series from './components/Pages/series/Series';
-
-import { useState } from 'react';
-
 import Trail from './components/Trail';
 
 
