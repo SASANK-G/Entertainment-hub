@@ -1,3 +1,10 @@
+@font-face {
+  src: url(../fonts/TheHistoriaDemo.ttf);
+  font-family: Historia;
+
+}
+
+
 .header {
   width: 100%;
   cursor: pointer;
@@ -7,7 +14,7 @@
   align-items: center;
   text-transform: uppercase;
   background-color: #39445a;
-  font-family: "Montserrat", sans-serif;
+  font-family: Historia;
   font-size: 3vw;
   height: 60px;
   /* padding: 15px 1px; */

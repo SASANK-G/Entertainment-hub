@@ -37,7 +37,7 @@ const SlickBar = styled.div`
   position:fixed;
   top:0;
   bottom:0;
-  height:30vh;
+  height:25vh;
   margin:auto;
   padding:0px 0px 0px .5rem;
   transition: all 0.5s ease;
@@ -50,16 +50,15 @@ const FirstPart = styled.div`
 width:100%;
 
 display:flex;
-flex-direction:flex-end;
-justify-content:end;
+
+justify-content:center;
+
 
 
 `;
 
 const Profile = styled.div`
   
-  
-
   padding: 0.5rem 1rem;
   /* border: 2px solid var(--white); */
   border-radius: 20px;
@@ -70,12 +69,15 @@ const Profile = styled.div`
   transition: all 0.3s ease;
 
   img {
-    width: 4.5rem;
-    height: 5rem;
+    width: 3.5rem;
+    height: 4rem;
     border-radius: 50%;
     cursor: pointer;
     border: 3px solid grey;
      
+    &:hover {
+      border: 3px solid #d1d2d3;
+    }
     
   }
 `;
@@ -94,10 +96,11 @@ const Name = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 0.8rem;
 
   
   a {
-    font-size: 0.8rem;
+    
     text-decoration: none;
     color: gray;
     margin:0.5rem 0;
