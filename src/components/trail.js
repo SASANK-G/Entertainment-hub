@@ -4,28 +4,6 @@ import styled from 'styled-components';
 
 
 
-
-// const SidebarContainer = styled.div`
-//   background-color: #39845a;
-//   width: 2rem;
-//   height: 20vh;
-//   top:0;
-  
-//   right:0;
-//   bottom:0;
-//   border-radius: 0 30px 30px 0;
-  
-//   position: fixed;
-//   display: flex;
-  
-//   align-items: center;
-//   justify-content: center;
-//   margin:auto;
-
-  
-// `;
-
-
 const SlickBar = styled.div`
   color:  White;
   display: flex;
@@ -50,19 +28,14 @@ const SlickBar = styled.div`
 
 const FirstPart = styled.div`
 width:100%;
-
 display:flex;
-
 justify-content:center;
-
-
 
 `;
 
 const Profile = styled.div`
   
   padding: 0.5rem 1rem;
-  /* border: 2px solid var(--white); */
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -80,7 +53,6 @@ const Profile = styled.div`
     &:hover {
       border: 3px solid #d1d2d3;
     }
-    
   }
   
 }
@@ -89,19 +61,16 @@ const Profile = styled.div`
 const Details = styled.div`
   display: flex;
   justify-content: space-between;
-  
   align-items: center;
 `;
 
 const Name = styled.div`
   
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
-
   
   a {
     
@@ -116,9 +85,6 @@ const Name = styled.div`
   }
 `;
 
-
-
-
 const SecondPart = styled.div`
 
   display:flex;
@@ -126,9 +92,6 @@ const SecondPart = styled.div`
   align-items:center;
 
 `;
-
-
-
 
 const Button = styled.button`
   background-color: black;
@@ -138,9 +101,6 @@ const Button = styled.button`
   border-radius: 50%;
   position:relative;
   cursor: pointer;
-  
-  
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -176,7 +136,7 @@ const [click, setClick] = useState(false);
   const handleClick = () => {
       
   setClick(!click);
-  console.log(click);
+  //console.log(click);
 
   }
 
