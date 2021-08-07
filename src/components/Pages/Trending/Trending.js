@@ -17,7 +17,6 @@ const Trending = () => {
     );
       
     setcontent(data.results);
-
   };
 
   useEffect(() => {
